@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.gradlew.bat :composeApp:assembleDebug --info)",
+      "Bash(./gradlew.bat :composeApp:assembleDebug:*)",
+      "Bash(gh auth setup-git:*)"
+    ]
+  }
+}
