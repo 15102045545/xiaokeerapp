@@ -3,7 +3,17 @@
     "allow": [
       "Bash(.gradlew.bat :composeApp:assembleDebug --info)",
       "Bash(./gradlew.bat :composeApp:assembleDebug:*)",
-      "Bash(gh auth setup-git:*)"
+      "Bash(gh auth setup-git:*)",
+      "Bash(gh run view:*)",
+      "Bash(gh run watch:*)",
+      "Bash(.gradlew.bat :composeApp:assembleDebug)",
+      "Bash(cmd.exe /c \"gradlew.bat :composeApp:assembleDebug\")",
+      "Bash(where:*)",
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(./gradlew.bat clean :composeApp:assembleDebug:*)",
+      "Bash(keytool:*)",
+      "Bash(./gradlew.bat :composeApp:assembleRelease:*)"
     ]
   }
 }

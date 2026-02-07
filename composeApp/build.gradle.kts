@@ -19,6 +19,11 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.androidx.compose.material.icons)
+            implementation(libs.androidx.compose.material.icons.extended)
+            implementation(libs.okhttp)
+            implementation(libs.gson)
+            implementation(libs.kotlinx.coroutines.android)
         }
         commonMain.dependencies {
             implementation(libs.compose.runtime)
@@ -47,6 +52,16 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
+
+    signingConfigs {
+        create("release") {
+            storeFile = file("../xiaokeer.keystore")
+            storePassword = "xiaokeer123"
+            keyAlias = "xiaokeer"
+            keyPassword = "xiaokeer123"
+        }
+    }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -55,6 +70,7 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {

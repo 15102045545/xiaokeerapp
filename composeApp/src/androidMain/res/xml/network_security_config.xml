@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- 允许用户安装的CA证书（如自签名证书） -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <!-- 信任系统预装的CA证书 -->
+            <certificates src="system" />
+            <!-- 信任用户安装的CA证书（用于自签名HTTPS） -->
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- 特定域名配置 -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">vicp.fun</domain>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </domain-config>
+</network-security-config>
